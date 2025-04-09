@@ -1,8 +1,10 @@
+import { Text, VStack } from '@chakra-ui/react'
+
 function App(): JSX.Element {
   return (
-    <div>
-      <></>
-    </div>
+    <VStack>
+      <Text>Hello, World!</Text>
+    </VStack>
   )
 }
 
