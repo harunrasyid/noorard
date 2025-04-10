@@ -1,10 +1,11 @@
-import { Text, VStack } from '@chakra-ui/react'
+import { Route, Routes } from 'react-router'
+import { DisplayScreen } from '@renderer/modules'
 
 function App(): JSX.Element {
   return (
-    <VStack>
-      <Text>Hello, World!</Text>
-    </VStack>
+    <Routes>
+      <Route path="/" element={<DisplayScreen />} />
+    </Routes>
   )
 }
 
