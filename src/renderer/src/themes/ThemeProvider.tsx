@@ -1,33 +1,35 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
+import { EThemeMode } from '@renderer/constants'
 import { afternoonTheme, morningTheme, nightTheme } from './'
 
 interface IThemeModeContext {
-  setThemeMode: (mode: string) => void
+  themeMode: EThemeMode
+  setThemeMode: (mode: EThemeMode) => void
 }
 
 const ThemeModeContext = createContext<IThemeModeContext>({
+  themeMode: EThemeMode.Morning,
   setThemeMode: () => {}
 })
 
 export const useThemeMode = (): IThemeModeContext => useContext(ThemeModeContext)
 
 export const CustomThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [themeMode, setThemeMode] = useState<string>('morning')
+  const [themeMode, setThemeMode] = useState<EThemeMode>(EThemeMode.Morning)
 
-  // Choose theme based on time
   useEffect(() => {
     const hour = new Date().getHours()
-    if (hour < 12) setThemeMode('morning')
-    else if (hour < 18) setThemeMode('afternoon')
-    else setThemeMode('night')
+    if (hour < 12) setThemeMode(EThemeMode.Morning)
+    else if (hour < 18) setThemeMode(EThemeMode.Afternoon)
+    else setThemeMode(EThemeMode.Night)
   }, [])
 
   const theme = (time: string) => {
     switch (time) {
-      case 'morning':
+      case EThemeMode.Morning:
         return morningTheme
-      case 'afternoon':
+      case EThemeMode.Afternoon:
         return afternoonTheme
       default:
         return nightTheme
@@ -35,7 +37,7 @@ export const CustomThemeProvider: React.FC<{ children: React.ReactNode }> = ({ c
   }
 
   return (
-    <ThemeModeContext.Provider value={{ setThemeMode }}>
+    <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
       <ChakraProvider theme={theme(themeMode)}>{children}</ChakraProvider>
     </ThemeModeContext.Provider>
   )

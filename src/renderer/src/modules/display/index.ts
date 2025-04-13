@@ -1,1 +1,1 @@
-export * from './DisplayScreen'
+export * from './screen'
