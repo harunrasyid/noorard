@@ -27,7 +27,8 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "electron-updater": "^6.3.9",
-    "framer-motion": "^12.6.3"
+    "framer-motion": "^12.6.3",
+    "react-fast-marquee": "^1.6.5"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
