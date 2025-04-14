@@ -19,7 +19,7 @@ export const InformationCard = ({ title, children, style, theme }: IInformationC
     <VStack sx={{ ...styles.card, ...background(theme), ...style }}>
       {/* Title */}
       {title ? (
-        <Text fontWeight={'extrabold'} fontSize={'2xl'}>
+        <Text fontWeight={'extrabold'} fontSize={{ base: 'sm', md: 'lg', lg: '2xl' }}>
           {title}
         </Text>
       ) : null}
