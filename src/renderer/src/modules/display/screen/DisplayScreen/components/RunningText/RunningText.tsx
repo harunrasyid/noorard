@@ -1,23 +1,18 @@
-import { VStack } from '@chakra-ui/react'
+import { Text, VStack } from '@chakra-ui/react'
 import Marquee from 'react-fast-marquee'
-import { color } from '@renderer/styles'
+import { styles } from "./RunningText.style"
 
 export const RunningText = () => {
   return (
     <VStack
-      sx={{
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
-        backgroundColor: color.softBeige['200']
-      }}
+      sx={styles.container}
     >
       <Marquee
         style={{
           alignItems: 'center'
         }}
       >
-        I can be a React component, multiple React components, or just some text.
+        <Text>Text 1</Text>
       </Marquee>
     </VStack>
   )
