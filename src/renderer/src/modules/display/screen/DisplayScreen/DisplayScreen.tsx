@@ -57,14 +57,7 @@ export const DisplayScreen: FC = () => {
       </VStack>
 
       {/* Running-text */}
-      <VStack
-        sx={{
-          height: '5%',
-          width: '100%'
-        }}
-      >
-        <RunningText />
-      </VStack>
+      <RunningText />
     </VStack>
   )
 }
