@@ -3,9 +3,10 @@ import { radius } from '@renderer/styles'
 
 const styles: { [key: string]: SystemStyleObject } = {
   videoContainer: {
+    flex: 1,
     width: '100%',
-    position: 'relative',
-    aspectRatio: '16 / 9',
+    maxHeight: '60%',
+    backgroundColor: 'red',
     borderRadius: radius.lg,
     overflow: 'hidden'
   }
