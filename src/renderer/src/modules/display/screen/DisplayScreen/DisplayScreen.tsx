@@ -9,16 +9,7 @@ export const DisplayScreen: FC = () => {
 
   return (
     <VStack sx={styles.container}>
-      {/* Content */}
-      <VStack
-        sx={{
-          flex: 1,
-          width: '100%',
-          maxHeight: '95%',
-          alignItems: 'stretch',
-          justifyContent: 'space-between'
-        }}
-      >
+      <HStack sx={styles.content}>
         {/* Left */}
         <VStack sx={styles.left}>
           {/* Video Banner */}
@@ -54,10 +45,12 @@ export const DisplayScreen: FC = () => {
 
         {/* Right */}
         <VStack sx={styles.right}></VStack>
-      </VStack>
+      </HStack>
 
-      {/* Running-text */}
-      <RunningText />
+      {/* Running text */}
+      <VStack sx={styles.runningText}>
+        <RunningText />
+      </VStack>
     </VStack>
   )
 }
