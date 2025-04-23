@@ -36,7 +36,12 @@ const styles: { [key: string]: SystemStyleObject } = {
     height: '100%'
   },
 
-  right: { flex: 1, maxWidth: '40%', minHeight: '100%' },
+  right: {
+    flex: 1,
+    maxWidth: '40%',
+    minHeight: '100%',
+    gap: { base: spacingScale.sM, md: spacingScale.lG, lg: spacingScale['3xL'] }
+  },
 
   runningText: {
     width: '100%'

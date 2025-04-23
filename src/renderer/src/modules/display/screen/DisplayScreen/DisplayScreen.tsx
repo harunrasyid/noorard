@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { HStack, Text, VStack } from '@chakra-ui/react'
 import { useThemeMode } from '@renderer/themes'
-import { InformationCard, RunningText, VideoBanner } from './components'
+import { InformationCard, RunningText, ScheduleCard, VideoBanner } from './components'
 import { styles } from './DisplayScreen.style'
 
 export const DisplayScreen: FC = () => {
@@ -44,7 +44,13 @@ export const DisplayScreen: FC = () => {
         </VStack>
 
         {/* Right */}
-        <VStack sx={styles.right}></VStack>
+        <VStack sx={styles.right}>
+          <ScheduleCard />
+          <ScheduleCard />
+          <ScheduleCard />
+          <ScheduleCard />
+          <ScheduleCard />
+        </VStack>
       </HStack>
 
       {/* Running text */}
