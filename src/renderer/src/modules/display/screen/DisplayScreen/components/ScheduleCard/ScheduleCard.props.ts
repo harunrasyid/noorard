@@ -1,5 +1,13 @@
-import { EThemeMode } from "@renderer/constants";
+import { EThemeMode } from '@renderer/constants'
+
+export enum EScheduleCardVariant {
+  Default = 'default',
+  Active = 'active'
+}
 
 export interface IScheduleCardProps {
-      theme?: EThemeMode
+  title: string
+  time: string
+  variant?: EScheduleCardVariant
+  theme?: EThemeMode
 }
