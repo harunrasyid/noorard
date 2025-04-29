@@ -30,11 +30,6 @@ const styles: { [key: string]: SystemStyleObject } = {
     overflow: 'hidden',
     gap: { base: spacingScale.sM, md: spacingScale.lG, lg: spacingScale['3xL'] }
   },
-  card: {
-    flex: 1,
-    width: '100%',
-    height: '100%'
-  },
 
   right: {
     flex: 1,
