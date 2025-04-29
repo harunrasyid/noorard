@@ -10,15 +10,47 @@ const styles: { [key: string]: SystemStyleObject } = {
     justifyContent: 'space-between'
   },
 
+  left: {
+    alignItems: 'flex-start',
+    gap: 0,
+  },
+  titleText: {
+    fontWeight: 'extrabold',
+    fontSize: { base: 'lg', md: '2xl', lg: '4xl' }
+  },
+  activeText: {
+    fontWeight: 'bold',
+    fontSize: { base: 'md', md: 'lg', lg: 'xl' }
+  },
+
+  timeText: {
+    fontWeight: 'extrabold',
+    fontSize: { base: '2xl', md: '4xl', lg: '6xl' }
+  },
+
+  activeTextColor: {
+    color: color.forestGreen['500'],
+  },
+
   morningBackground: {
     backgroundColor: color.softBeige['200']
+  },
+  morningActiveBackground: {
+    backgroundColor: color.forestGreen['500']
   },
   afternoonBackground: {
     backgroundColor: color.forestGreen['500']
   },
+
+  afternoonActiveBackground: {
+    backgroundColor: color.goldenAmber['500']
+  },
   nightBackground: {
     backgroundColor: color.softBeige['200']
-  }
+  },
+  nightActiveBackground: {
+    backgroundColor: color.goldenAmber['500']
+  },
 }
 
 export { styles }
