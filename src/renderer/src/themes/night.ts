@@ -20,7 +20,7 @@ export const nightTheme = extendTheme({
       },
       body: {
         bg: color.forestGreen['500'],
-        color: color.goldenAmber['500']
+        color: color.forestGreen['500']
       }
     }
   },

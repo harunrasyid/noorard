@@ -1,7 +1,13 @@
 import { FC } from 'react'
 import { HStack, Text, VStack } from '@chakra-ui/react'
 import { useThemeMode } from '@renderer/themes'
-import { EScheduleCardVariant, InformationCard, RunningText, ScheduleCard, VideoBanner } from './components'
+import {
+  EScheduleCardVariant,
+  InformationCard,
+  RunningText,
+  ScheduleCard,
+  VideoBanner
+} from './components'
 import { styles } from './DisplayScreen.style'
 
 export const DisplayScreen: FC = () => {
@@ -45,7 +51,12 @@ export const DisplayScreen: FC = () => {
 
         {/* Right */}
         <VStack sx={styles.right}>
-          <ScheduleCard time={'04:30'} title={'Subuh'} variant={EScheduleCardVariant.Active} theme={themeMode} />
+          <ScheduleCard
+            time={'04:30'}
+            title={'Subuh'}
+            variant={EScheduleCardVariant.Active}
+            theme={themeMode}
+          />
           <ScheduleCard time={'12:00'} title={'Dzuhur'} theme={themeMode} />
           <ScheduleCard time={'13:15'} title={'Ashar'} theme={themeMode} />
           <ScheduleCard time={'18:00'} title={'Maghrib'} theme={themeMode} />
@@ -55,7 +66,7 @@ export const DisplayScreen: FC = () => {
 
       {/* Running text */}
       <VStack sx={styles.runningText}>
-        <RunningText />
+        <RunningText items={['Item 1', 'Running Text 2']} theme={themeMode} />
       </VStack>
     </VStack>
   )

@@ -12,7 +12,7 @@ const styles: { [key: string]: SystemStyleObject } = {
 
   left: {
     alignItems: 'flex-start',
-    gap: 0,
+    gap: 0
   },
   titleText: {
     fontWeight: 'extrabold',
@@ -28,8 +28,24 @@ const styles: { [key: string]: SystemStyleObject } = {
     fontSize: { base: '2xl', md: '4xl', lg: '6xl' }
   },
 
-  activeTextColor: {
-    color: color.forestGreen['500'],
+  morningActiveText: {
+    color: color.softBeige['200']
+  },
+  afternoonActiveText: {
+    color: color.forestGreen['500']
+  },
+  nightActiveText: {
+    color: color.forestGreen['500']
+  },
+
+  morningText: {
+    color: color.forestGreen['500']
+  },
+  afternoonText: {
+    color: color.softBeige['200']
+  },
+  nightText: {
+    color: color.forestGreen['500']
   },
 
   morningBackground: {
@@ -50,7 +66,7 @@ const styles: { [key: string]: SystemStyleObject } = {
   },
   nightActiveBackground: {
     backgroundColor: color.goldenAmber['500']
-  },
+  }
 }
 
 export { styles }

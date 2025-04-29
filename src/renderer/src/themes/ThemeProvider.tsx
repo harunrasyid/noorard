@@ -18,12 +18,12 @@ export const useThemeMode = (): IThemeModeContext => useContext(ThemeModeContext
 export const CustomThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [themeMode, setThemeMode] = useState<EThemeMode>(EThemeMode.Morning)
 
-  // useEffect(() => {
-  //   const hour = new Date().getHours()
-  //   if (hour < 12) setThemeMode(EThemeMode.Morning)
-  //   else if (hour < 18) setThemeMode(EThemeMode.Afternoon)
-  //   else setThemeMode(EThemeMode.Night)
-  // }, [])
+  useEffect(() => {
+    const hour = new Date().getHours()
+    if (hour < 12) setThemeMode(EThemeMode.Morning)
+    else if (hour < 18) setThemeMode(EThemeMode.Afternoon)
+    else setThemeMode(EThemeMode.Night)
+  }, [])
 
   const theme = (time: string) => {
     switch (time) {

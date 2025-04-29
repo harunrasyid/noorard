@@ -9,51 +9,44 @@ export const ScheduleCard = ({
   variant = EScheduleCardVariant.Default,
   theme
 }: IScheduleCardProps) => {
-  const background = (
-    currentTheme?: EThemeMode,
-    currentVariant?: EScheduleCardVariant
+  const getStyle = (
+    type: 'Background' | 'Text',
+    theme?: EThemeMode,
+    variant?: EScheduleCardVariant
   ): SystemStyleObject => {
-    switch (currentVariant) {
-      case EScheduleCardVariant.Active: {
-        switch (currentTheme) {
-          case EThemeMode.Morning:
-            return styles.morningActiveBackground
-          case EThemeMode.Afternoon:
-            return styles.afternoonActiveBackground
-          default:
-            return styles.nightActiveBackground
-        }
-      }
-      default: {
-        switch (currentTheme) {
-          case EThemeMode.Morning:
-            return styles.morningBackground
-          case EThemeMode.Afternoon:
-            return styles.afternoonBackground
-          default:
-            return styles.nightBackground
-        }
-      }
-    }
+    const variantPrefix = variant === EScheduleCardVariant.Active ? 'Active' : ''
+    const themeKey =
+      theme === EThemeMode.Morning
+        ? 'morning'
+        : theme === EThemeMode.Afternoon
+          ? 'afternoon'
+          : 'night'
+
+    const styleKey = `${themeKey}${variantPrefix}${type}` as keyof typeof styles
+    return styles[styleKey]
   }
 
-  const isActive = variant === EScheduleCardVariant.Active
+  const background = (theme?: EThemeMode, variant?: EScheduleCardVariant): SystemStyleObject =>
+    getStyle('Background', theme, variant)
 
-  const activeTextColor = isActive ? styles.activeTextColor : undefined
+  const text = (theme?: EThemeMode, variant?: EScheduleCardVariant): SystemStyleObject =>
+    getStyle('Text', theme, variant)
+
+  const isActive = variant === EScheduleCardVariant.Active
 
   return (
     <HStack sx={{ ...styles.card, ...background(theme, variant) }}>
       {/* Left */}
       <VStack sx={styles.left}>
         {isActive && (
-          <Text sx={{ ...styles.activeText, ...activeTextColor }}>{`Next Prayer:`}</Text>
+          <Text sx={{ ...styles.activeText, ...text(theme, variant) }}>{`Next Prayer:`}</Text>
         )}
-        <Text sx={{...styles.titleText, ...activeTextColor}}>{title}</Text>
+        <Text sx={{ ...styles.titleText, ...text(theme, variant) }}>{title}</Text>
       </VStack>
 
       {/* Right */}
       <VStack>
-        <Text sx={{...styles.timeText, ...activeTextColor }}>{time}</Text>
+        <Text sx={{ ...styles.timeText, ...text(theme, variant) }}>{time}</Text>
       </VStack>
     </HStack>
   )

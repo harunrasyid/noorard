@@ -20,7 +20,7 @@ export const afternoonTheme = extendTheme({
       },
       body: {
         bg: color.softBeige['500'],
-        color: color.forestGreen['500']
+        color: color.softBeige[200]
       }
     }
   },
