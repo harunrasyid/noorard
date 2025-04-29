@@ -3,3 +3,4 @@ export * from './InformationCard'
 export * from './RunningText'
 export * from './RunningTextItem'
 export * from './ScheduleCard'
+export * from "./InformationSection"
